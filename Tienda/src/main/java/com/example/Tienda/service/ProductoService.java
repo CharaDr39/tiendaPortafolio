@@ -16,4 +16,11 @@ public interface ProductoService {
     
     // Se elimina el producto que tiene el id pasado por parámetro
     public void delete(Producto producto);
+
+
+//-*-*-*-*-*--*-*-*-*-*- EA-08-Practicas-4 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+    // Método para obtener el valor total de inventario por categoría
+    List<Object[]> getTotalInventoryValueByCategory();
 }

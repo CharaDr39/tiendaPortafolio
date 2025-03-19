@@ -4,6 +4,7 @@ import com.example.Tienda.domain.Categoria;
 import com.example.Tienda.service.CategoriaService;
 import com.example.Tienda.service.ProductoService;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,4 +40,16 @@ public class PruebasController {
         model.addAttribute("categorias", categorias);
         return "/pruebas/listado";
     }
+
+
+//-*-*-*-*-*--*-*-*-*-*- EA-08-Practicas-4 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    
+
+    @GetMapping("/consultaAmpliada")
+    public String consultaAmpliada(Model model) {
+        List<Object[]> consulta = productoService.getTotalInventoryValueByCategory();
+        model.addAttribute("consulta", consulta);
+        return "pruebas/consultaAmpliada";
+    }
+
 }

@@ -42,4 +42,15 @@ public class ProductoServiceImpl implements ProductoService {
         productoDao.delete(producto);
     }
     
+
+
+
+//-*-*-*-*-*--*-*-*-*-*- EA-08-Practicas-4 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+    @Override
+    public List<Object[]> getTotalInventoryValueByCategory() {
+        return productoDao.findTotalInventoryValueByCategory();
+    }
 }
