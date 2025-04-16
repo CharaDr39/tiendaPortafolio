@@ -3,18 +3,35 @@ package com.example.Tienda.service;
 import com.example.Tienda.domain.Categoria;
 import java.util.List;
 
+/**
+ * Interfaz de servicio para operaciones con la entidad Categoria.
+ */
 public interface CategoriaService {
 
-    public List<Categoria> getCategorias(boolean activo);
+    /**
+     * Obtiene la lista de categorías.
+     * @param activo si true filtra solo categorías activas; si false, todas.
+     * @return lista de categorías según el filtro.
+     */
+    List<Categoria> getCategorias(boolean activo);
 
-    // Se obtiene un Categoria, a partir del id de un categoria
-    public Categoria getCategoria(Categoria categoria);
+    /**
+     * Recupera una categoría a partir de su identificador.
+     * @param categoria instancia con el idCategoria a buscar.
+     * @return la categoría completa obtenida de la base de datos.
+     */
+    Categoria getCategoria(Categoria categoria);
     
-    // Se inserta un nuevo categoria si el id del categoria esta vacío
-    // Se actualiza un categoria si el id del categoria NO esta vacío
-    public void save(Categoria categoria);
+    /**
+     * Inserta una nueva categoría o actualiza una existente.
+     * @param categoria la categoría a guardar; si idCategoria es null inserta, sino actualiza.
+     */
+    void save(Categoria categoria);
     
-    // Se elimina el categoria que tiene el id pasado por parámetro
-    public void delete(Categoria categoria);
+    /**
+     * Elimina la categoría especificada.
+     * @param categoria la categoría a eliminar (debe contener el idCategoria).
+     */
+    void delete(Categoria categoria);
 
 }
